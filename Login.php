@@ -15,7 +15,6 @@
 
 	$user = findUser();
 	//doit renvoyer false si l'utilisateur n'existe pas et un tableau des données de l'utilisateur si il existe
-	$user = array("id"=>"1", "firstname"=>"askia", "lastname"=>"hamani", "mail"=>"aaa@gmail.com","pseudo"=>"asas","password"=>"azerty");
 	
 	if(!user){header("Location: Connexion.php?error=1");exit;}
 	// Si l'utilisateur n'existe pas renvoie un erreur
