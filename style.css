@@ -1,0 +1,19 @@
+h1{
+    text-align:center;
+    font-size: 2em;
+}
+.header{
+    list-style-type:none;
+    overflow:hidden;
+}
+.header li{
+    display:inline;
+    font-size: 1.5em;
+    text-align:center;
+    float:left;
+}
+.header li a{
+    display:block;
+    padding:15px 15px;
+    text-decoration: none;
+}
