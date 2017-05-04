@@ -4,7 +4,7 @@
 
 	if($connect){
 		$id = $_SESSION['id'];
-		$fistname = $_SESSION['fistname'];
+		$firstname = $_SESSION['firstname'];
 		$lastname = $_SESSION['lastname'];
 		$mail = $_SESSION['mail'];
 		$pseudo = $_SESSION['pseudo'];

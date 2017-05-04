@@ -1,3 +1,6 @@
+<?php 
+	include 'session.php';
+?>
 <html>
 <head>
         <title> Inscription </title>
@@ -14,9 +17,10 @@
 	}
 	//Vérifie les erreurs
 	?>
+	<h1> Connexion </h1>
 	<p>
 	Vous n'êtes pas encore inscrit ? <a href='Inscription.php' > Inscrivez vous ici </a>
-	</p>
+	</p><br>
 	<form action='Login.php' method='POST'><table>
 	<tr><td> Pseudo : </td><td> <input type='text' name='pseudo'></td></tr>
 	<tr><td> Mot de passe : </td><td> <input type='password' name='password'></td></tr>
