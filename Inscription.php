@@ -6,7 +6,8 @@
 <head>
         <title> Inscription </title>
         <meta charset='utf-8'>
-	<link rel="stylesheet" href="style.css">
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<link rel="stylesheet" href="style.css">
 </head>
 <body>
         <?php
@@ -16,7 +17,7 @@
 	Vous possédez déja un compte ? <a href='Connexion.php' > Connectez vous ici </a>
 	</p>
 	<form id='inscription' action='VerifInscrip.php' method='POST'>
-	<table> 
+	<table>
 	<tr> <td> Nom : </td> <td> <input type='text' name='lastname'></td></tr>
 	<tr> <td> Prénom : </td> <td> <input type='text' name='firstname'></td></tr>
 	<tr> <td> Pseudo : </td> <td> <input type='text' name='pseudo'></td></tr>
