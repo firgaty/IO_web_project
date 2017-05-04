@@ -13,9 +13,18 @@
         <?php
 	include 'header.php';
 	?>
+	<h1>Inscription</h1>
 	<p>
-	Vous possédez déja un compte ? <a href='Connexion.php' > Connectez vous ici </a>
-	</p>
+	Vous êtes déjà inscrit ? <a href='Connexion.php' > Connectez-vous ici </a>
+	</p><br>
+
+	<?php 
+		if(isset($_GET['error'])){
+		echo"<p>Inscription échouée.<br>";
+		if($_GET['error'] == 1){echo"Mot de passe et vérification de mot de passe différent.";}
+		if($_GET['error'] == 2){echo"Pseudo existant.";}		
+	}
+	?>
 	<form id='inscription' action='VerifInscrip.php' method='POST'>
 	<table>
 	<tr> <td> Nom : </td> <td> <input type='text' name='lastname'></td></tr>
