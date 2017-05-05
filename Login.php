@@ -2,7 +2,7 @@
 	session_start();
 
 	function findUser($user){
-		require "test/connexionDB";
+		require "test/connexionBD.php";
 
 		$req = "SELECT * FROM users WHERE pseudo='$user';";
 		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));

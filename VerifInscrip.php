@@ -11,10 +11,10 @@
 	return false;
 	}
 
-	require "test/connexionDB";
+	require "test/connexionBD.php";
 
 	function findUser($user){
-		require "test/connexionBD";
+		require "test/connexionBD.php";
 
 		$req = "SELECT * FROM users WHERE pseudo='$user';";
 		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));

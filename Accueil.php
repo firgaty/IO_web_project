@@ -14,7 +14,7 @@
         ?>
 	<h1>Accueil</h1>
   <?php
-require "test/connexionBD";
+require "test/connexionBD.php";
 /* Vérification de la connexion */
 if (mysqli_connect_errno()) {
     printf("Échec de la connexion : %s\n", mysqli_connect_error());
