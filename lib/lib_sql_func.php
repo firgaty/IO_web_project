@@ -31,4 +31,6 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
   mysqli_query($link, $req);
 }
 
+
+
 ?>
