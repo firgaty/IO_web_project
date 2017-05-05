@@ -7,7 +7,7 @@
         <title> Inscription </title>
         <meta charset='utf-8'>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-				<link rel="stylesheet" href="style.css">
+				<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
         <?php
@@ -18,11 +18,11 @@
 	Vous êtes déjà inscrit ? <a href='Connexion.php' > Connectez-vous ici </a>
 	</p><br>
 
-	<?php 
+	<?php
 		if(isset($_GET['error'])){
 		echo"<p>Inscription échouée.<br>";
 		if($_GET['error'] == 1){echo"Mot de passe et vérification de mot de passe différent.";}
-		if($_GET['error'] == 2){echo"Pseudo existant.";}		
+		if($_GET['error'] == 2){echo"Pseudo existant.";}
 	}
 	?>
 	<form id='inscription' action='VerifInscrip.php' method='POST'>

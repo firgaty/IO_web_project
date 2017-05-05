@@ -5,7 +5,6 @@
 */
 
 /**
-*
 * @param $tab_post : tableau de toutes les champs que l'on veut inserer.
 * @param $link : ce qu'a retourné le mysqli_connect();
 * @param $table : STRING la table SQL dans laquelle on insere les valeurs.
