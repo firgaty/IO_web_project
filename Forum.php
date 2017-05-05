@@ -19,24 +19,27 @@
       } else {
         $nombre_posts = 30;
       }
+
+      for($i = $debut; $i < $nombre_posts; $i ++) {
+        echo "<div class=\"topic ".(($i % 2 == 0) ? "pair" : "impair")."\">
+          <div class=\"topic_left\">
+            <p>IMAGE</p>
+          </div>
+          <div class=\"topic_right\">
+            <table class=\"topic_table\">
+              <tr>
+                <th class=\"text_left\">TITRE</th>
+                <th class=\"topic_date\">DATE</th>
+              </tr>
+              <tr>
+                <th colspan=\"2\" class=\"post\">DERNIER POST : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</th>
+              </tr>
+            </table>
+          </div>
+          <div class=\"after\"/>
+          </div>
+        </div>";
+      }
     ?>
-    <!-- TEST -->
-    <div class="topic impair">
-      <div class="topic_left">
-        <p>IMAGE</p>
-      </div>
-      <div class="topic_right">
-        <table class="topic_table">
-          <tr>
-            <th class="text_left">TITRE</th>
-            <th class="topic_date">DATE</th>
-          </tr>
-          <tr>
-            <th colspan="2" class="post">DERNIER POST : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</th>
-          </tr>
-        </table>
-      </div>
-      <div class="after"/>
-    </div>
   </body>
 </html>
