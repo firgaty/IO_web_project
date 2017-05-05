@@ -1,6 +1,6 @@
 <?php
 	header("Content-Type: text/html; charset=utf-8");
-	require 'lib_sql_func.php';
+	require 'lib/lib_sql_func.php';
 
 
 	//Pour interdire certain caractere lors d'une inscription
@@ -11,22 +11,11 @@
 	return false;
 	}
 
-	$connexion = mysqli_connect ( "pams.script.univ-paris-diderot.fr", "pmejan65", 'd0M%bw5Z' ) ;
-	MYSQLI_SELECT_DB($connexion, 'pmejan65');
-		if (!$connexion) {
-			echo "Pas de connexion au serveur " ; exit ;
-		}
-
-	if (!$connexion) {
-		echo "Pas de connexion au serveur " ; exit ;
-	}
+	require "test/connexionDB";
 
 	function findUser($user){
-		$connexion = mysqli_connect ( "pams.script.univ-paris-diderot.fr", "pmejan65", 'd0M%bw5Z' ) ;
-		MYSQLI_SELECT_DB($connexion, 'pmejan65');
-		if (!$connexion) {
-			echo "Pas de connexion au serveur " ; exit ;
-		}
+		require "test/connexionBD";
+
 		$req = "SELECT * FROM users WHERE pseudo='$user';";
 		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
 		$tab = mysqli_fetch_assoc($reponse);
@@ -44,7 +33,7 @@
 
 
 	$champs = array('firstname','lastname','pseudo','mail','password');
-	lib/lib_sql_insert_from_post($champs, $connexion, 'users');
+	lib_sql_insert_from_post($champs, $connexion, 'users');
 	// header("Location: Accueil.php");
 
 ?>

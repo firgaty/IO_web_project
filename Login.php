@@ -2,15 +2,14 @@
 	session_start();
 
 	function findUser($user){
-		$connexion = mysqli_connect ( "pams.script.univ-paris-diderot.fr", "pmejan65", 'd0M%bw5Z' ) ;	
-		MYSQLI_SELECT_DB($connexion, 'pmejan65');
-		if (!$connexion) {
-			echo "Pas de connexion au serveur " ; exit ;	
-		}
+		require "test/connexionDB";
+
 		$req = "SELECT * FROM users WHERE pseudo='$user';";
 		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
 		$tab = mysqli_fetch_assoc($reponse);
-		return $tab; 
+
+		mysqli_close($connexion);
+		return $tab;
 	}
 
 	$user = findUser($_POST['pseudo']);
