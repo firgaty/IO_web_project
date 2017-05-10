@@ -32,14 +32,6 @@ h1 {
     float: right;
 }
 
-footer{
-    background-color : #0ff;
-    text-align: center;
-    position:fixed;
-    bottom:0px;
-    width:100%;
-}
-
 .topic {
     display: block;
     overflow: hidden;

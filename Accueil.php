@@ -30,5 +30,6 @@ if ($result = mysqli_query($connexion, "SELECT DATABASE()")) {
 
 mysqli_close($connexion);
 ?>
+	<?php include 'footer.php'; ?>
 </body>
 </html>

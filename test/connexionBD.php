@@ -4,7 +4,7 @@
 * fichier qui définit la variable $connexion et test la connexion effective à la BD.
 */
 
-  $DB_USER = "felix"; // Changer à "pierre" ou "Pierre" pour avoir ta BD.
+  $DB_USER = "pierre"; // Changer à "pierre" ou "Pierre" pour avoir ta BD.
 
   $connexion;
 

@@ -31,9 +31,8 @@
 	}//verifie si le mot de passe et sa verification son pareil
 
 
-
 	$champs = array('firstname','lastname','pseudo','mail','password');
 	lib_sql_insert_from_post($champs, $connexion, 'users');
-	// header("Location: Accueil.php");
+	header("Location: Accueil.php");
 
 ?>

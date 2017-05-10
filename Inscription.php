@@ -36,5 +36,6 @@
 	</table>
 	<input type='submit' value='Valider mon insciption'>
 	</form>
+	<?php include 'footer.php'; ?>
 </body>
 </html>

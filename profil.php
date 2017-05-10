@@ -21,5 +21,7 @@
 	<tr> <td> Mail : </td> <td> $mail </td></tr>
 	</table>";
 	?>
+
+	<?php include 'footer.php'; ?>
 </body>
 </html>

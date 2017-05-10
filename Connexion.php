@@ -3,9 +3,9 @@
 ?>
 <html>
 <head>
-        <title> Inscription </title>
+        <title> Connexion </title>
         <meta charset='utf-8'>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>       
 	<?php
@@ -26,6 +26,7 @@
 	<tr><td> Mot de passe : </td><td> <input type='password' name='password'></td></tr>
 	</table>
 	<input type='submit' value='Connexion'> </form>
-
+	
+	<?php include 'footer.php'; ?>
 </body>
 </html>
