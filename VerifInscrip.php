@@ -29,7 +29,8 @@
 	if($_POST['password'] != $_POST['password2']){
 		header("Location: Inscription.php?error=1");exit;
 	}//verifie si le mot de passe et sa verification son pareil
-
+	
+	$_POST['password'] = sha1($_POST['password']);
 
 	$champs = array('firstname','lastname','pseudo','mail','password');
 	lib_sql_insert_from_post($champs, $connexion, 'users');
