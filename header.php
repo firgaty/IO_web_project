@@ -5,7 +5,7 @@
 		<li> <a href='Forum.php'> Forum </a></li>";
 	if(!$connect){//partie a afficher si l'utilisateur n'est pas connecté
 		echo "<li> <a href='Inscription.php'> Inscription </a></li>";
-		echo "<li> <a href='Connexion.php'> Connexion </a></li>";
+		//echo "<li> <a href='Connexion.php'> Connexion </a></li>";
 		echo "<li> <form action='Login.php' method='POST'> 
 			<input type='text' name='pseudo' placeholder='pseudo'><br>
 			<input type='password' name='password' placeholder='password'><br>
