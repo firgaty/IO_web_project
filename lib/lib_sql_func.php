@@ -17,7 +17,8 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
 
   foreach($tab_post as $i => $value){
     if(isset($_POST[$value])) {
-      $champs = $champs.$value.", ";
+      $champs = $champs.mysqli_real_escape_string($link, $value).", ";
+      $_POST[$value] = mysqli_real_escape_string($link, $_POST[$value]);
       if(is_string($_POST[$value])) {
         $sql_values = $sql_values."'".$_POST["$value"]."'".", ";
       } elseif (is_numeric($_POST[$value])) {
@@ -36,6 +37,16 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
   $req = "INSERT INTO ".$table." ".$champs." VALUES ".$sql_values.";";
   echo $req;
   mysqli_query($link, $req);
+}
+
+function findUser($user){
+ require "test/connexionBD.php";
+ $user = mysqli_real_escape_string($connexion, $user);
+ $req = "SELECT * FROM users WHERE pseudo='$user';";
+ $reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
+ $tab = mysqli_fetch_assoc($reponse);
+ mysqli_close($connexion);
+ return $tab;
 }
 
 
