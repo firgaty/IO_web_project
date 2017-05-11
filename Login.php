@@ -1,16 +1,6 @@
 <?php
 	session_start();
-
-	function findUser($user){
-		require "test/connexionBD.php";
-
-		$req = "SELECT * FROM users WHERE pseudo='$user';";
-		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
-		$tab = mysqli_fetch_assoc($reponse);
-
-		mysqli_close($connexion);
-		return $tab;
-	}
+	require 'lib/lib_sql_func.php';
 
 	$user = findUser($_POST['pseudo']);
 	//doit renvoyer false si l'utilisateur n'existe pas et un tableau des données de l'utilisateur si il existe

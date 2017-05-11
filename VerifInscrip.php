@@ -13,15 +13,6 @@
 
 	require "test/connexionBD.php";
 
-	function findUser($user){
-		require "test/connexionBD.php";
-
-		$req = "SELECT * FROM users WHERE pseudo='$user';";
-		$reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
-		$tab = mysqli_fetch_assoc($reponse);
-		return $tab;
-	}
-
 	if(findUser($_POST['pseudo']) != false){
 		header("Location: Inscription.php?error=2");exit;
 	}//verifie si le pseudo existe

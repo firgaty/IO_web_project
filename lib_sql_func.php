@@ -40,6 +40,16 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
   mysqli_query($link, $req);
 }
 
+function findUser($user){
+ require "test/connexionBD.php";
+
+ $req = "SELECT * FROM users WHERE pseudo='$user';";
+ $reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
+ $tab = mysqli_fetch_assoc($reponse);
+ mysqli_close($connexion);
+ return $tab;
+}
+
 
 
 ?>
