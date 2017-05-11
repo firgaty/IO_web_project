@@ -1,6 +1,6 @@
 <?php
-$link = mysqli_connect("localhost", "root", "", "IO2_web_project");
-
+require 'connexionBD.php';
+$link = $connexion;
 /* Vérification de la connexion */
 if (mysqli_connect_errno()) {
     printf("Échec de la connexion : %s\n", mysqli_connect_error());
