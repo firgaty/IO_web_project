@@ -23,7 +23,8 @@
 		if(isset($_GET['error'])){
 		echo"<p>Inscription échouée.<br>";
 		if($_GET['error'] == 1){echo"Mot de passe et vérification de mot de passe différent.";}
-		if($_GET['error'] == 2){echo"Pseudo existant.";}
+		elseif($_GET['error'] == 2){echo"Pseudo existant.";}
+		elseif($_GET['error'] == 3){echo"Remplissage des champs incomplet.";}
 	}
 	?>
 	<form id='inscription' action='VerifInscrip.php' method='POST'>
