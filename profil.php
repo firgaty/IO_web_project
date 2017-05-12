@@ -14,12 +14,12 @@
         ?>
 	<h1>Profil</h1>
 	<?php
-	echo"<table>
-	<tr> <td> Nom : </td> <td> $lastname </td></tr>
-	<tr> <td> Prénom : </td> <td> $firstname </td></tr>
-	<tr> <td> Pseudo : </td> <td> $pseudo </td></tr>
-	<tr> <td> Mail : </td> <td> $mail </td></tr>
-	</table>";
+	echo"<table>";
+	echo"<tr> <td> Nom : </td> <td>".htmlspecialchars($lastname)."</td></tr>";
+	echo"<tr> <td> Prénom : </td> <td>".htmlspecialchars($firstname)."</td></tr>";
+	echo"<tr> <td> Pseudo : </td> <td>".htmlspecialchars($pseudo)."</td></tr>";
+	echo"<tr> <td> Mail : </td> <td>".htmlspecialchars($mail)."</td></tr>";
+	echo"</table>";
 	?>
 
 	<?php include 'footer.php'; ?>
