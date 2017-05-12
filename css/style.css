@@ -15,11 +15,14 @@ h1 {
     text-align: center;
     float: left;
     text-color: #ffffff;
+    height:100px;
+    width:20%;
 }
 
 .header li a {
     display: block;
-    padding: 15px 15px;
+    height:100%;
+    width:100%;
     text-decoration: none;
     color: #ffffff;
 }
@@ -81,45 +84,6 @@ footer{
     overflow: hidden;
 }
 
-.message {
-  width:auto;
-}
-
-.center {
-  align-content: center;
-}
-
-.body_center {
-  margin: auto;
-  width: 70%;
-  min-width: 900px;  
-}
-
-.btn {
-  /*background-color: rgba(51, 40, 154, 1);*/
-  background: linear-gradient(rgba(51, 40, 154,0.4), rgba(51, 40, 154,1));
-  color: white;
-}
-
-.submit {
-
-}
-
-.separator {
-  background: rgba(56, 66, 76, 1);
-  width: 100%;
-  height: 3px;
-  display: block;
-}
-
-.center {
-   margin:auto;
-   display:block;
-}
-
-h4 {
-  text-decoration: underline;
-}
 
 /*.after {
   clear: both;
