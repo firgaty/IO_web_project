@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <?php include 'header.php' ?>
+    <?php
+		include 'session.php';
+		include 'header.php';
+		?>
+		<div class="body_center">
     <h1>Forum</h1>
     <?php
       if (isset($_POST['debut'])) {
@@ -45,6 +49,7 @@
       }
     ?>
 
+	</div>
 	<?php include 'footer.php'; ?>
   </body>
 </html>
