@@ -12,15 +12,18 @@
         <?php
 	include 'header.php';
         ?>
+	<div class="body_center">
 	<h1>Profil</h1>
+	
+	<table>
 	<?php
-	echo"<table>";
 	echo"<tr> <td> Nom : </td> <td>".htmlspecialchars($lastname)."</td></tr>";
 	echo"<tr> <td> Prénom : </td> <td>".htmlspecialchars($firstname)."</td></tr>";
 	echo"<tr> <td> Pseudo : </td> <td>".htmlspecialchars($pseudo)."</td></tr>";
 	echo"<tr> <td> Mail : </td> <td>".htmlspecialchars($mail)."</td></tr>";
-	echo"</table>";
-	?>
+	?>	
+	</table>
+	</div>
 
 	<?php include 'footer.php'; ?>
 </body>

@@ -12,6 +12,7 @@
         <?php
 	include 'header.php';
         ?>
+	<div class="body_center">
 	<h1>Accueil</h1>
   <?php
 require "test/connexionBD.php";
@@ -30,6 +31,7 @@ if ($result = mysqli_query($connexion, "SELECT DATABASE()")) {
 
 mysqli_close($connexion);
 ?>
+	<div class="body_center">
 	<?php include 'footer.php'; ?>
 </body>
 </html>

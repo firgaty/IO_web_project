@@ -13,6 +13,7 @@
         <?php
 	include 'header.php';
 	?>
+	<div class="body_center">
 	<h1>Inscription</h1>
 	<p>
 	Vous êtes déjà inscrit ? <a href='Connexion.php' > Connectez-vous ici </a>
@@ -36,6 +37,7 @@
 	</table>
 	<input type='submit' value='Valider mon insciption'>
 	</form>
+	</div>
 	<?php include 'footer.php'; ?>
 </body>
 </html>

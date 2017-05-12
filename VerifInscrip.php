@@ -25,6 +25,12 @@
 
 	$champs = array('firstname','lastname','pseudo','mail','password');
 	lib_sql_insert_from_post($champs, $connexion, 'users');
+	
+	session_start();
+	$user = findUser($_POST['pseudo']);
+	$liste = array("id", "firstname", "lastname", "mail","pseudo");
+	for($i=0;$i<count($liste);$i++){$_SESSION[$liste[$i]] = $user[$liste[$i]];}
+
 	header("Location: Accueil.php");
 
 ?>

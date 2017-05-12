@@ -10,7 +10,6 @@
   </head>
   <body>
     <?php
-		include 'session.php';
 		include 'header.php';
 		?>
 		<div class="body_center">
@@ -27,7 +26,7 @@
         $nombre_posts = 30;
       }
 
-      for($i = $debut; $i < $nombre_posts; $i ++) {
+      for($i = $debut; $i < $nombre_posts+$debut; $i ++) {
         echo "<div class=\"topic ".(($i % 2 == 0) ? "pair" : "impair")."\">
           <div class=\"topic_left\">
             <p>IMAGE</p>
