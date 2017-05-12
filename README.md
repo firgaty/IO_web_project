@@ -11,7 +11,7 @@ L'ensemble des pages accessibles au public sont à la racine.
 
 ### Dossier test/
 Il est à noté qu'à présent seuls deux scripts sont ici répertorié:
-- __connexionDB.php__ : Comme on travail majoritairement en local, on a pas les même paramètres de connexion à nos bases de données respectives. Donc, au lieu de devoir commenter les identifiants de l'autre, on  plus qu'à changer une variable au sein de ce script. $DB_USER peut prendre deux valeurs: 'Félix' ou 'Pierre'.
+- __connexionDB.php__ : Comme on travail majoritairement en local, on a pas les même paramètres de connexion à nos bases de données respectives. Donc, au lieu de devoir commenter les identifiants de l'autre, on  plus qu'à changer une variable au sein de ce script. $DB_USER peut prendre deux valeurs: 'Félix' ou 'Pierre'. __IMPORTANT :__ ce script a été ajouté au .gitignore.
 ```php
 $DB_USER = 'pierre'
 /*
