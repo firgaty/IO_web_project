@@ -38,6 +38,6 @@
 	$liste = array("id", "firstname", "lastname", "mail","pseudo");
 	for($i=0;$i<count($liste);$i++){$_SESSION[$liste[$i]] = $user[$liste[$i]];}
 
-	header("Location: Accueil.php");
+	header("Location: Accueil.php");exit;
 
 ?>

@@ -31,7 +31,7 @@ if ($result = mysqli_query($connexion, "SELECT DATABASE()")) {
 
 mysqli_close($connexion);
 ?>
-	<div class="body_center">
+	</div>
 	<?php include 'footer.php'; ?>
 </body>
 </html>

@@ -23,6 +23,7 @@
 	echo"<tr> <td> Mail : </td> <td>".htmlspecialchars($mail)."</td></tr>";
 	?>	
 	</table>
+	<a href="modification.php"> Modifiez votre compte</a>
 	</div>
 
 	<?php include 'footer.php'; ?>
