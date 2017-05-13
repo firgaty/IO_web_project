@@ -39,6 +39,9 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
   mysqli_query($link, $req);
 }
 
+//fonction qui renvoie toutes les données d'un utilisateur 
+//ou false si l'utilisateur n'existe pas
+
 function findUser($user){
  require "test/connexionBD.php";
  $user = mysqli_real_escape_string($connexion, $user);
@@ -48,6 +51,17 @@ function findUser($user){
  mysqli_close($connexion);
  return $tab;
 }
+
+//fonction qui vérifie que le mot de passe soit correct
+function password_verify($pass, $user){
+	$user = findUser($user);
+	if($user != false)
+		return sha1($pass) == $user['password'];
+	else
+		return false;
+}
+
+
 
 
 
