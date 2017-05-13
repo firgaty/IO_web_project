@@ -41,11 +41,17 @@ function lib_sql_insert_from_post($tab_post, $link, $table) {
 
 //fonction qui renvoie toutes les données d'un utilisateur 
 //ou false si l'utilisateur n'existe pas
+//si $user est une chaine de caractere, cherche le pseudo
+//si $user est un nombre, cherche l'id
 
 function findUser($user){
  require "test/connexionBD.php";
+ if(is_numeric($user)){
+  $req = "SELECT * FROM users WHERE id=$user;";
+}else{
  $user = mysqli_real_escape_string($connexion, $user);
  $req = "SELECT * FROM users WHERE pseudo='$user';";
+}
  $reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
  $tab = mysqli_fetch_assoc($reponse);
  mysqli_close($connexion);
@@ -59,6 +65,20 @@ function password_verify($pass, $user){
 		return sha1($pass) == $user['password'];
 	else
 		return false;
+}
+
+
+function updateUser($id, $values){
+	require "test/connexionBD.php";
+	$req = "UPDATE users SET ";
+	foreach($values as $k => $v){
+		$req = $req.$k."='".mysqli_real_escape_string($connexion,$v)."' ,";
+	}
+	$req = substr($req, 0 , -1);
+	$req = $req." WHERE id = $id;";
+	echo $req;
+	mysqli_query($connexion, $req);
+	mysqli_close($connexion);
 }
 
 
