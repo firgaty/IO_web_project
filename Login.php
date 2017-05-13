@@ -7,7 +7,8 @@
 	if(!user){header("Location: Connexion.php?error=1");exit;}
 	// Si l'utilisateur n'existe pas renvoie un erreur
 
-	if(sha1($_POST['password']) != $user['password']){header("Location: Connexion.php?error=2");exit;}
+	if(!password_verify($_POST['password'], $_POST['pseudo']))
+		{header("Location: Connexion.php?error=2");exit;}
 	//Si le mot de passe est incorrect renvoie une erreur
 	else{
 		$liste = array("id", "firstname", "lastname", "mail","pseudo");
