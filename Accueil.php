@@ -10,10 +10,11 @@
 </head>
 <body>
         <?php
-	include 'header.php';
+    include 'header.php';
         ?>
-	<div class="body_center">
+	<div class="main">
 	<h1>Accueil</h1>
+  <div class="separator"></div>
   <?php
 require "test/connexionBD.php";
 /* Vérification de la connexion */

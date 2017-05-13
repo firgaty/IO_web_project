@@ -15,14 +15,11 @@ h1 {
     text-align: center;
     float: left;
     text-color: #ffffff;
-    height:100px;
-    width:20%;
 }
 
 .header li a {
     display: block;
-    height:100%;
-    width:100%;
+    padding: 15px 15px;
     text-decoration: none;
     color: #ffffff;
 }
@@ -92,20 +89,21 @@ footer{
   align-content: center;
 }
 
-.body_center {
+.main {
   margin: auto;
   width: 70%;
-  min-width: 900px;  
+  min-width: 900px;
 }
 
 .btn {
   /*background-color: rgba(51, 40, 154, 1);*/
-  background: linear-gradient(rgba(51, 40, 154,0.4), rgba(51, 40, 154,1));
+  background: linear-gradient(rgba(51, 40, 154,0.4), rgba(51, 40, 154,0.6), rgba(51, 40, 154,0.9), rgba(51, 40, 154,1));
   color: white;
+  display: block;
 }
 
 .submit {
-
+  margin-right: 0%;
 }
 
 .separator {

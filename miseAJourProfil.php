@@ -1,12 +1,12 @@
-<?php 
+<?php
 	require 'session.php';
-	require 'lib/lib_sql_func.php';
-	
+	require_once 'lib/lib_sql_func.php';
+
 	foreach($_POST as $k => $v){
 		if($v==""){
 		header("Location: modification.php?error=3");exit;}
 	}//vérifie que tous les champs soit remplis
-	
+
 	if(findUser($_POST['pseudo']) != false && $_POST['pseudo'] != $pseudo){
 		header("Location: modification.php?error=2");exit;
 	}//verifie si le pseudo existe
@@ -20,11 +20,11 @@
 	unset($_POST['password2']);
 
 	updateUser($id,$_POST);
-	
+
 	$user = findUser($id);
 	$liste = array("id", "firstname", "lastname", "mail","pseudo");
 	for($i=0;$i<count($liste);$i++){$_SESSION[$liste[$i]] = $user[$liste[$i]];}
-	
+
 	unset($_COOKIE['pass']);
 	header("Location: profil.php");exit;
 ?>

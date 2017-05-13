@@ -11,78 +11,79 @@
 * @param $link : ce qu'a retourné le mysqli_connect();
 * @param $table : STRING la table SQL dans laquelle on insere les valeurs.
 */
-function lib_sql_insert_from_post($tab_post, $link, $table) {
-  $champs = "";
-  $sql_values = "";
+function lib_sql_insert_from_post($tab_post, $link, $table)
+{
+    $champs = "";
+    $sql_values = "";
 
-  foreach($tab_post as $i => $value){
-    if(isset($_POST[$value])) {
-      $champs = $champs.mysqli_real_escape_string($link, $value).", ";
-      $_POST[$value] = mysqli_real_escape_string($link, $_POST[$value]);
-      if(is_string($_POST[$value])) {
-        $sql_values = $sql_values."'".$_POST["$value"]."'".", ";
-      } elseif (is_numeric($_POST[$value])) {
-        $sql_values = $sql_values.$_POST["$value"].", ";
-      }
+    foreach ($tab_post as $i => $value) {
+        if (isset($_POST[$value])) {
+            $champs = $champs.mysqli_real_escape_string($link, $value).", ";
+            $_POST[$value] = mysqli_real_escape_string($link, $_POST[$value]);
+            if (is_string($_POST[$value])) {
+                $sql_values = $sql_values."'".$_POST["$value"]."'".", ";
+            } elseif (is_numeric($_POST[$value])) {
+                $sql_values = $sql_values.$_POST["$value"].", ";
+            }
+        }
     }
-  }
-  if(strlen($champs) == 0 || strlen($sql_values) == 0) return;
+    if (strlen($champs) == 0 || strlen($sql_values) == 0) {
+        return;
+    }
 
-  $champs = "(".substr($champs, 0 , -2).")";
-  $sql_values = "(".substr($sql_values, 0, -2).")";
+    $champs = "(".substr($champs, 0, -2).")";
+    $sql_values = "(".substr($sql_values, 0, -2).")";
 
-  echo 'Champs: '.$champs."\n";
-  echo 'sql_values: '.$sql_values."\n";
+    echo 'Champs: '.$champs."\n";
+    echo 'sql_values: '.$sql_values."\n";
 
-  $req = "INSERT INTO ".$table." ".$champs." VALUES ".$sql_values.";";
-  echo $req;
-  mysqli_query($link, $req);
+    $req = "INSERT INTO ".$table." ".$champs." VALUES ".$sql_values.";";
+    echo $req;
+    mysqli_query($link, $req);
 }
 
-//fonction qui renvoie toutes les données d'un utilisateur 
+//fonction qui renvoie toutes les données d'un utilisateur
 //ou false si l'utilisateur n'existe pas
 //si $user est une chaine de caractere, cherche le pseudo
 //si $user est un nombre, cherche l'id
 
-function findUser($user){
- require "test/connexionBD.php";
- if(is_numeric($user)){
-  $req = "SELECT * FROM users WHERE id=$user;";
-}else{
- $user = mysqli_real_escape_string($connexion, $user);
- $req = "SELECT * FROM users WHERE pseudo='$user';";
+function findUser($user)
+{
+    require "test/connexionBD.php";
+    if (is_numeric($user)) {
+        $req = "SELECT * FROM users WHERE id=$user;";
+    } else {
+        $user = mysqli_real_escape_string($connexion, $user);
+        $req = "SELECT * FROM users WHERE pseudo='$user';";
+    }
+    $reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
+    $tab = mysqli_fetch_assoc($reponse);
+    mysqli_close($connexion);
+    return $tab;
 }
- $reponse = mysqli_query($connexion, $req) or die(mysqli_error($connexion));
- $tab = mysqli_fetch_assoc($reponse);
- mysqli_close($connexion);
- return $tab;
-}
+
 
 //fonction qui vérifie que le mot de passe soit correct
-function password_verify($pass, $user){
-	$user = findUser($user);
-	if($user != false)
-		return sha1($pass) == $user['password'];
-	else
-		return false;
+function lib_sql_password_verify($pass, $user)
+{
+    $user = findUser($user);
+    if ($user != false) {
+        return sha1($pass) == $user['password'];
+    } else {
+        return false;
+    }
 }
 
-
-function updateUser($id, $values){
-	require "test/connexionBD.php";
-	$req = "UPDATE users SET ";
-	foreach($values as $k => $v){
-		$req = $req.$k."='".mysqli_real_escape_string($connexion,$v)."' ,";
-	}
-	$req = substr($req, 0 , -1);
-	$req = $req." WHERE id = $id;";
-	echo $req;
-	mysqli_query($connexion, $req);
-	mysqli_close($connexion);
+function updateUser($id, $values)
+{
+    require "test/connexionBD.php";
+    $req = "UPDATE users SET ";
+    foreach ($values as $k => $v) {
+        $req = $req.$k."='".mysqli_real_escape_string($connexion, $v)."' ,";
+    }
+    $req = substr($req, 0, -1);
+    $req = $req." WHERE id = $id;";
+    echo $req;
+    mysqli_query($connexion, $req);
+    mysqli_close($connexion);
 }
-
-
-
-
-
-?>

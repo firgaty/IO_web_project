@@ -1,6 +1,6 @@
 <?php
 	include 'session.php';
-	if(isset($_POST['pass'])){ 
+	if(isset($_POST['pass'])){
 		setcookie('pass',$_POST['pass'], time()+5*60);
 		header("Location: modification.php");
 	}
@@ -15,11 +15,11 @@
 <body>
         <?php
 	include 'header.php';
-	include 'lib/lib_sql_func.php';
+	require_once 'lib/lib_sql_func.php';
         ?>
 	<div class="body_center">
 	<h1>Modification du profil</h1>
-	
+
 	<table>
 	<?php
 		if(!isset($_COOKIE['pass'])){
@@ -28,7 +28,7 @@
 			printf("<input type='password' name='pass'>");
 			printf("<input type='submit' value='Valider'>");
 			echo"</form>";
-		}elseif(!password_verify($_COOKIE['pass'],$pseudo)){
+		}elseif(!lib_sql_password_verify($_COOKIE['pass'],$pseudo)){
 			printf("Mot de passe incorrect réessayez<br>");
 			echo"<form method='POST' action='modification.php'>";
 			printf("<input type='password' name='pass'>");
@@ -47,15 +47,15 @@
 			echo"<tr> <td> Prénom : </td> <td> <input type='text' name='firstname' maxlength='50' value='$firstname'></td></tr>";
 			echo"<tr> <td> Pseudo : </td> <td> <input type='text' name='pseudo' maxlength='50' value='$pseudo'></td></tr>";
 			echo"<tr> <td> Mail : </td> <td> <input type='email' name='mail' maxlength='50' value='$mail'></td></tr>";
-			echo"<tr> <td> Nouveau mot de passe : </td> <td> 
+			echo"<tr> <td> Nouveau mot de passe : </td> <td>
 				<input type='password' name='password' maxlength='50' value='$password'></td></tr>";
-			echo"<tr> <td> Retapez votre nouveau mot de passe : </td> <td> 
+			echo"<tr> <td> Retapez votre nouveau mot de passe : </td> <td>
 				<input type='password' name='password2' maxlength='50' value='$password'></td></tr>";
 			echo"</table>";
 			echo"<input type='submit' value='Enregistrer'>";
 			echo"</form>";
 		}
-	?>	
+	?>
 	</table>
 	</div>
 

@@ -1,13 +1,13 @@
 <?php
 	session_start();
-	require 'lib/lib_sql_func.php';
+	require_once 'lib/lib_sql_func.php';
 
 	$user = findUser($_POST['pseudo']);
 	//doit renvoyer false si l'utilisateur n'existe pas et un tableau des données de l'utilisateur si il existe
 	if(!user){header("Location: Connexion.php?error=1");exit;}
 	// Si l'utilisateur n'existe pas renvoie un erreur
 
-	if(!password_verify($_POST['password'], $_POST['pseudo']))
+	if(!lib_sql_password_verify($_POST['password'], $_POST['pseudo']))
 		{header("Location: Connexion.php?error=2");exit;}
 	//Si le mot de passe est incorrect renvoie une erreur
 	else{

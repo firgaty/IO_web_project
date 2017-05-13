@@ -1,6 +1,6 @@
 <?php
 	header("Content-Type: text/html; charset=utf-8");
-	require 'lib_sql_func.php';
+	require_once 'lib_sql_func.php';
 
 
 	//Pour interdire certain caractere lors d'une inscription
