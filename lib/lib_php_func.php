@@ -35,7 +35,12 @@ function get_current_url($strip = true) {
     return sprintf('%s://%s%s', $scheme, $host, $filter($_SERVER['REQUEST_URI']));
 }
 
-function get_thread_name( ){
-    
+function get_thread_name(){
+    if(isset($_GET['thread']))
+      return $_GET['thread'];
+    elseif (isset($_POST['thread'])) {
+      return $_POST['thread'];
+    }
 }
+
 ?>
