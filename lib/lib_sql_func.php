@@ -38,8 +38,11 @@ function lib_sql_insert_from_post($tab_post, $link, $table)
     echo 'sql_values: '.$sql_values."\n";
 
     $req = "INSERT INTO ".$table." ".$champs." VALUES ".$sql_values.";";
-    echo $req;
     mysqli_query($link, $req);
+}
+
+function lib_sql_insert($fields, $values, $link, $table) {
+
 }
 
 //fonction qui renvoie toutes les données d'un utilisateur
@@ -86,4 +89,21 @@ function updateUser($id, $values)
     echo $req;
     mysqli_query($connexion, $req);
     mysqli_close($connexion);
+}
+
+function get_thread_id($thread_name) {
+  $request = "SELECT id FROM threads WHERE title = '".$thread_name."';";
+  $out = mysqli_fetch_array(mysqli_query($request), MYSQL_NUM);
+  return $out[0];
+}
+
+function get_user_id($user_pseudo) {
+  $request = "SELECT id FROM users WHERE pseudo = '".$thread_name."';";
+  $out = mysqli_fetch_array(mysqli_query($request), MYSQL_NUM);
+  return $out[0];
+}
+
+function input_date($row_id, $field, $link, $table) {
+  $request = "INSERT INTO $table ($field) WHERE 'id' = $row_id VALUES (".date("Y-m-d H:i:s").");";
+  mysqli_query($request);
 }

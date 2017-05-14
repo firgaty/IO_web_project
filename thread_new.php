@@ -15,6 +15,7 @@
       <h1>Nouveau thread</h1>
       <div class="separator"></div>
       <form class="" action="thread.php?title=1" method="post">
+        <input type="hidden" name="new_thread" value="true">
         <table>
           <tr>
             <td>Nom du thread: </td>
