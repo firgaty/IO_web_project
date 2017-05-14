@@ -12,7 +12,7 @@
     <?php
 		include 'header.php';
 		?>
-		<div class="body_center">
+		<div class="main">
     <h1>Forum</h1>
     <?php
       if (isset($_POST['debut'])) {
